@@ -1,8 +1,5 @@
-cid
-mysqlcid
-mysqltemp
+*CID
 datadir
-APACHE_DATADIR
-MYSQL_DATADIR
-MYSQL_PASS
 logstashTAG
+logstash.conf
+NAME
