@@ -109,9 +109,8 @@ redisCID:
 	$(eval redisTAG := $(shell cat redisTAG))
 	@docker run --name=$(NAME)-redis \
 	--cidfile="redisCID" \
-	--link $(NAME)-elasticsearch:elasticsearch \
+	--link $(NAME)-logstash:logstash \
 	-d \
-	-p 5000:5000 \
 	--restart=always \
 	-v "$(DATADIR)/redis/conf":/config-dir \
 	-t $(redisTAG) redis -f /config-dir/redis.conf
@@ -138,7 +137,7 @@ sshCID:
 	$(eval sshTAG := $(shell cat sshTAG))
 	@docker run --name=$(NAME)-ssh \
 	--cidfile="sshCID" \
-	--link $(NAME)-elasticsearch:elasticsearch \
+	--link $(NAME)-logstash:logstash \
 	-d \
 	-p $(SSH_PORT):22 \
 	-e KEY_URL=$(KEY_URL) \
