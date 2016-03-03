@@ -8,6 +8,8 @@ help:
 	@echo ""  This is merely a base image for usage read the README file
 	@echo ""   1. make logstash       -  run logstash docker container
 
+elk: elasticsearch logstash kibana
+
 logstash: logstashTAG NAME logstashCID
 
 elasticsearch: DATADIR elasticsearchTAG NAME elasticsearchCID
