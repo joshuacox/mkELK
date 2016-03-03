@@ -121,10 +121,11 @@ kibanaTAG:
 rmall: rm
 
 example:
+	$(eval PWD := $(shell pwd))
 	cp -i logstashTAG.example logstashTAG
 	cp -i elasticsearchTAG.example elasticsearchTAG
 	cp -i kibanaTAG.example kibanaTAG
 	cp -i -a datadir.example datadir
-	echo "$PWD/datadir">/tmp/my.example
+	echo "$(PWD)/datadir">/tmp/my.example
 	cp -i /tmp/my.example DATADIR
 	rm /tmp/my.example
