@@ -3,5 +3,6 @@ datadir
 logstashTAG
 elasticsearchTAG
 kibanaTAG
+DATADIR
 logstash.conf
 NAME
