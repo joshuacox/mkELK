@@ -52,3 +52,5 @@ rmall: rm
 
 example:
 	cp -i logstashTAG.example logstashTAG
+	cp -i elasticsearchTAG.example elasticsearchTAG
+	cp -i kibanaTAG.example kibanaTAG

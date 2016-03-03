@@ -1,5 +1,7 @@
 *CID
 datadir
 logstashTAG
+elasticsearchTAG
+kibanaTAG
 logstash.conf
 NAME
