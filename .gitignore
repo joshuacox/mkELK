@@ -6,3 +6,5 @@ kibanaTAG
 DATADIR
 logstash.conf
 NAME
+SSH_PORT
+KEY_URL
