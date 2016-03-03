@@ -187,7 +187,7 @@ NAME:
 
 DATADIR:
 	@while [ -z "$$DATADIR" ]; do \
-		read -r -p "Enter the name you wish to associate with this container [DATADIR]: " DATADIR; echo "$$DATADIR">>DATADIR; cat DATADIR; \
+		read -r -p "Enter the datadir you wish to associate with this container [DATADIR]: " DATADIR; echo "$$DATADIR">>DATADIR; cat DATADIR; \
 	done ;
 
 rmall: rm
