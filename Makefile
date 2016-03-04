@@ -34,7 +34,7 @@ logstashCID:
 
 logstashTAG:
 	@while [ -z "$$logstashTAG" ]; do \
-		read -r -p "Enter the tag you wish to associate with this container, hint `make example` [logstashTAG]: " logstashTAG; echo "$$logstashTAG">>logstashTAG; cat logstashTAG; \
+		read -r -p "Enter the tag you wish to associate with this container, hint 'make example' [logstashTAG]: " logstashTAG; echo "$$logstashTAG">>logstashTAG; cat logstashTAG; \
 	done ;
 
 enterlogstash:
