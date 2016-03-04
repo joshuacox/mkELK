@@ -137,13 +137,12 @@ sshCID:
 	$(eval sshTAG := $(shell cat sshTAG))
 	@docker run --name=$(NAME)-ssh \
 	--cidfile="sshCID" \
-	--link $(NAME)-logstash:logstash \
 	--link $(NAME)-redis:redis \
 	-d \
 	-p $(SSH_PORT):22 \
 	-e KEY_URL=$(KEY_URL) \
 	--restart=always \
-	-t $(sshTAG) joshuacox/octossh
+	-t $(sshTAG)
 
 sshTAG:
 	@while [ -z "$$sshTAG" ]; do \
