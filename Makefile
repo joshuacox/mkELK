@@ -112,8 +112,8 @@ redisCID:
 	--link $(NAME)-logstash:logstash \
 	-d \
 	--restart=always \
-	-v "$(DATADIR)/redis/conf":/config-dir \
-	-t $(redisTAG) redis -f /config-dir/redis.conf
+	-v "$(DATADIR)/redis/data":/data \
+	-t $(redisTAG) redis-server --appendonly yes
 
 redisTAG:
 	@while [ -z "$$redisTAG" ]; do \
@@ -138,11 +138,11 @@ sshCID:
 	@docker run --name=$(NAME)-ssh \
 	--cidfile="sshCID" \
 	--link $(NAME)-logstash:logstash \
+	--link $(NAME)-redis:redis \
 	-d \
 	-p $(SSH_PORT):22 \
 	-e KEY_URL=$(KEY_URL) \
 	--restart=always \
-	-v "$(DATADIR)/ssh/conf":/config-dir \
 	-t $(sshTAG) joshuacox/octossh
 
 sshTAG:
