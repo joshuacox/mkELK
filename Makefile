@@ -27,7 +27,6 @@ logstashCID:
 	--cidfile="logstashCID" \
 	--link $(NAME)-elasticsearch:elasticsearch \
 	-d \
-	-p 5000:5000 \
 	--restart=always \
 	-v "$(DATADIR)/logstash/conf":/config-dir \
 	-t $(logstashTAG) logstash -f /config-dir/logstash.conf
@@ -55,8 +54,6 @@ elasticsearchCID:
 	@docker run --name=$(NAME)-elasticsearch \
 	--cidfile="elasticsearchCID" \
 	-d \
-	-p 9200:9200 \
-	-p 9300:9300 \
 	--restart=always \
 	-v "$(DATADIR)/elasticsearch/config":/usr/share/elasticsearch/config \
 	-v "$(DATADIR)/elasticsearch/esdata":/usr/share/elasticsearch/data \
