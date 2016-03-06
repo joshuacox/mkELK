@@ -137,6 +137,7 @@ sshCID:
 	$(eval sshTAG := $(shell cat sshTAG))
 	@docker run --name=$(NAME)-ssh \
 	--cidfile="sshCID" \
+	--link $(NAME)-elasticsearch:elasticsearch \
 	--link $(NAME)-logstash:logstash \
 	--link $(NAME)-redis:redis \
 	-d \
