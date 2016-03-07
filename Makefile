@@ -14,7 +14,7 @@ help:
 	@echo ""   5. make redis       -  run redis docker container
 	@echo ""   6. make ssh       -  run ssh docker container
 
-elk: elasticsearch redis logstash kibana ssh
+elk: elasticsearch redis logstash ssh kibana
 
 # Logstash
 logstash: logstashTAG NAME logstashCID
@@ -107,7 +107,6 @@ redisCID:
 	$(eval redisTAG := $(shell cat redisTAG))
 	@docker run --name=$(NAME)-redis \
 	--cidfile="redisCID" \
-	--link $(NAME)-logstash:logstash \
 	-d \
 	--restart=always \
 	-v "$(DATADIR)/redis/data":/data \
