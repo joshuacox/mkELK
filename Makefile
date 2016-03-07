@@ -14,7 +14,7 @@ help:
 	@echo ""   5. make redis       -  run redis docker container
 	@echo ""   6. make ssh       -  run ssh docker container
 
-elk: elasticsearch logstash kibana redis ssh
+elk: ssh redis elasticsearch logstash kibana
 
 # Logstash
 logstash: logstashTAG NAME logstashCID
