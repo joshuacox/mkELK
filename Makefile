@@ -26,6 +26,7 @@ logstashCID:
 	@docker run --name=$(NAME)-logstash \
 	--cidfile="logstashCID" \
 	--link $(NAME)-elasticsearch:elasticsearch \
+	--link $(NAME)-redis:redis \
 	-d \
 	--restart=always \
 	-v "$(DATADIR)/logstash/conf":/config-dir \
