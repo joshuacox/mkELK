@@ -56,9 +56,11 @@ elasticsearchCID:
 	--cidfile="elasticsearchCID" \
 	-d \
 	--restart=always \
-	-v "$(DATADIR)/elasticsearch/config":/usr/share/elasticsearch/config \
 	-v "$(DATADIR)/elasticsearch/esdata":/usr/share/elasticsearch/data \
 	-t $(elasticsearchTAG) elasticsearch
+
+# For now we'll leave this out of the elasticsearchCID recipe
+	# -v "$(DATADIR)/elasticsearch/config":/usr/share/elasticsearch/config \
 
 enterelasticsearch:
 	docker exec -i -t `cat elasticsearchCID` /bin/bash
