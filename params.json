@@ -1,0 +1,6 @@
+{
+  "name": "Mkelk",
+  "tagline": "Make a persistent ELK stack docker container PDQ!",
+  "body": "# mkELK\r\nMake a persistent ELK stack docker container PDQ!\r\n\r\n### Usage\r\n\r\n#### Initialization\r\n\r\n`make example` will copy datadir.example to datadir\r\n\r\nat this point you'll need to go supply a `datadir/logstash/conf/logstash.conf` file\r\n\r\nof note you can move the `datadir` wherever you like, but update the file DATADIR accordingly, it should contain a full path to the `datadir`\r\n\r\n### Running\r\n\r\n`make elk`  this is pretty much it, it should prompt you for any needed info\r\n\r\n#### Restart\r\n\r\nrestart the container with `make rm` followed by `make elk`\r\n\r\n#### Migration\r\n\r\nto migrate simply tar up this directory along with the datadir and move to the new docker host\r\n",
+  "note": "Don't delete this file! It's used internally to help with page regeneration."
+}

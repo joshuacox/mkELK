@@ -1,0 +1,67 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <meta charset='utf-8'>
+    <meta http-equiv="X-UA-Compatible" content="chrome=1">
+
+    <link rel="stylesheet" type="text/css" href="stylesheets/stylesheet.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/github-dark.css" media="screen">
+    <link rel="stylesheet" type="text/css" href="stylesheets/print.css" media="print">
+
+    <title>Mkelk by joshuacox</title>
+  </head>
+
+  <body>
+
+    <header>
+      <div class="container">
+        <h1>Mkelk</h1>
+        <h2>Make a persistent ELK stack docker container PDQ!</h2>
+
+        <section id="downloads">
+          <a href="https://github.com/joshuacox/mkELK/zipball/master" class="btn">Download as .zip</a>
+          <a href="https://github.com/joshuacox/mkELK/tarball/master" class="btn">Download as .tar.gz</a>
+          <a href="https://github.com/joshuacox/mkELK" class="btn btn-github"><span class="icon"></span>View on GitHub</a>
+        </section>
+      </div>
+    </header>
+
+    <div class="container">
+      <section id="main_content">
+        <h1>
+<a id="mkelk" class="anchor" href="#mkelk" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>mkELK</h1>
+
+<p>Make a persistent ELK stack docker container PDQ!</p>
+
+<h3>
+<a id="usage" class="anchor" href="#usage" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Usage</h3>
+
+<h4>
+<a id="initialization" class="anchor" href="#initialization" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Initialization</h4>
+
+<p><code>make example</code> will copy datadir.example to datadir</p>
+
+<p>at this point you'll need to go supply a <code>datadir/logstash/conf/logstash.conf</code> file</p>
+
+<p>of note you can move the <code>datadir</code> wherever you like, but update the file DATADIR accordingly, it should contain a full path to the <code>datadir</code></p>
+
+<h3>
+<a id="running" class="anchor" href="#running" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Running</h3>
+
+<p><code>make elk</code>  this is pretty much it, it should prompt you for any needed info</p>
+
+<h4>
+<a id="restart" class="anchor" href="#restart" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Restart</h4>
+
+<p>restart the container with <code>make rm</code> followed by <code>make elk</code></p>
+
+<h4>
+<a id="migration" class="anchor" href="#migration" aria-hidden="true"><span aria-hidden="true" class="octicon octicon-link"></span></a>Migration</h4>
+
+<p>to migrate simply tar up this directory along with the datadir and move to the new docker host</p>
+      </section>
+    </div>
+
+    
+  </body>
+</html>
